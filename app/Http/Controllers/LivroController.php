@@ -16,14 +16,6 @@ class LivroController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
@@ -36,15 +28,7 @@ class LivroController extends Controller
      */
     public function show(Livro $livro)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Livro $livro)
-    {
-        //
+        return $livro;
     }
 
     /**
@@ -52,7 +36,8 @@ class LivroController extends Controller
      */
     public function update(Request $request, Livro $livro)
     {
-        //
+        $livro->update($request->all());
+        return $livro;
     }
 
     /**
@@ -60,6 +45,6 @@ class LivroController extends Controller
      */
     public function destroy(Livro $livro)
     {
-        //
+        return $livro->delete();
     }
 }
